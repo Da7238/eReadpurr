@@ -1,0 +1,24 @@
+import twilio from 'twilio'
+
+const accountSID = 'AC70439e5a17c1a33dc787adc8f1e74a49'
+const authToken = 'dc6dd084aa5655fc6a2e3b4ce80875b7'
+const twilioNumber = '+19289626641'
+
+export async function sendSms()
+{
+    let client = new twilio(accountSID, authToken)
+
+    let message = await client.messages.create({
+        body: 'Hello World',
+        to: '+14155555555',
+        from: twilioNumber
+    })
+}
+
+//Code for the button
+import {sendSms} from 'backend/textMe.jsw';
+export function sendSms_click(event) {
+    sendSms();
+}
+
+
