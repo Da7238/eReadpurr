@@ -2,7 +2,7 @@ export async function sendSms(smsTo, smsMessage, accountData) {
 	try {
 		const accountSid = accountData.accountSid;
 		const secret = accountData.twillioAuthToken;
-        const client = require('twilio')('AC70439e5a17c1a33dc787adc8f1e74a49', 'dc6dd084aa5655fc6a2e3b4ce80875b7', {
+        const client = require('twilio')(accountSid, secret, {
             lazyLoading: true
         });
 		// const client = require('twilio')(accountSid, secret);
